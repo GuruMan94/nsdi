@@ -18,10 +18,13 @@ public class User implements UserDetails {
 		this.id = user.getId();
 		this.username = user.getUsername();
 		this.password = user.getPassword();
-		this.enabled = true;
+		this.enabled = user.getActive();
 		this.authorities = new ArrayList<>();
 	}
 
+	public long getId() {
+		return id;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

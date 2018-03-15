@@ -23,15 +23,14 @@ public class MyUserService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		MyUser user = myUserRepository.getByUsername(username);
-		if(user==null){
+		if (user == null) {
 			return null;
 		}
 		return new User(user);
 	}
 
-	MyUser getCurrentUser(){
+	public static User getUser(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String name = auth.getName();
-		return myUserRepository.getByUsername(name);
+		return (User) auth.getPrincipal();
 	}
 }

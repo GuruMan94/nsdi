@@ -69,14 +69,13 @@
                 firstName: cc.firstName,
                 lastName: cc.lastName,
                 phoneNumber: cc.phoneNumber,
-                id: cc.id,
                 active:true
             };
 
-            if (!contact.id) {
+            if (!cc.id) {
                 addContact(contact);
             } else {
-                updateContact(contact,contact.id);
+                updateContact(contact,cc.id);
             }
             clearVariables();
         }
@@ -96,7 +95,7 @@
 
         function updateContact(contact,id) {
             if(!contact) return;
-            $http.put("/contacts/"+id,JSON.stringify(contact), {
+            $http.patch("/contacts/"+id,JSON.stringify(contact), {
                 headers: {
                     'Content-Type': 'application/json'
                 }

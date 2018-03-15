@@ -5,7 +5,6 @@ import ge.tsotne.nsdi.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -31,7 +30,7 @@ public class ContactController {
         return contactService.save(contact);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Contact update(@PathVariable long id, @RequestBody Contact contact) {
         contact.setId(id);
         return contactService.save(contact);
