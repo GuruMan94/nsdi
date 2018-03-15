@@ -73,8 +73,8 @@
                     <button type="submit" class="btn btn-primary">
                         <i class="fa fa-save"></i> შენახვა
                     </button>
-                    <button type="button" class="btn">
-                        <i class="fa fa-eraser" ng-click="cc.clearVariables()"></i> გასუფთავება
+                    <button type="button" class="btn" ng-click="cc.clearVariables()">
+                        <i class="fa fa-eraser"></i> გასუფთავება
                     </button>
                 </div>
             </form>
@@ -118,7 +118,7 @@
                         <tbody>
                         <tr ng-repeat="contact in cc.contacts">
                             <td align="center">
-                                <a class="btn btn-default"><em class="fa fa-pencil" ng-click="cc.editClick(contact)"></em></a>
+                                <a class="btn btn-default"  ng-click="cc.editClick(contact)"><em class="fa fa-pencil"></em></a>
                                 <a class="btn btn-danger" ng-click="cc.deleteContact(contact.id)"><em
                                         class="fa fa-trash"></em></a>
                             </td>
