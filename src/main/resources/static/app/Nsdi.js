@@ -20,5 +20,26 @@
 (function () {
     'use strict';
 
-    angular.module('nsdi',[]);
+    var nsdi = angular.module('nsdi', ['ui.router']);
+    nsdi.config(function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('/',{
+                url:'/',
+                templateUrl:'index.html'
+            })
+
+            .state('home', {
+                url: '/home',
+                templateUrl: 'home.html'
+            })
+
+            .state('about', {
+                url: '/login',
+                templateUrl: 'login.html'
+                // we'll get to this in a bit
+            });
+    })
+
 })();
