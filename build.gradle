@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-    id "at.comm_unity.gradle.plugins.jpamodelgen" version "1.1.4"
+    id "com.scalified.plugins.gradle.metamodel" version "0.0.1"
 }
 
 apply plugin: 'java'
@@ -24,16 +24,9 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 
-jpaModelgen {
-    library = "org.hibernate:hibernate-jpamodelgen:4.3.8.Final"
-    jpaModelgenSourcesDir = "src/main/java"
-}
-
-
 repositories {
     mavenCentral()
 }
-
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
