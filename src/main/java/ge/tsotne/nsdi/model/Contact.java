@@ -21,6 +21,7 @@ public class Contact {
     @Column(nullable = false)
     private String phoneNumber;
     private Boolean active;
+    private Long userId;
 
     @PrePersist
     public void prePersist(){
