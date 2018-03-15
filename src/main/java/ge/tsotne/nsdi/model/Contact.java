@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "contacts")
 public class Contact {
     @Id
     @GeneratedValue

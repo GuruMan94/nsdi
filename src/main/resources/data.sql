@@ -1,0 +1,1 @@
+insert into users (active, password, username, id) values (true, '$2a$04$tJtenBIWdBogqQ3VNUdSPOAbbDcO4Vr0Na0FagFB6FS92T7TOwpKW', 'tsotne', 1)
