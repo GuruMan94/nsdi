@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
@@ -40,7 +40,7 @@
         <h1>კონტაქტების მართვის სისტემა</h1><br>
 
         <div class="col-md-4 col-md-offset-4">
-            <form name="form" ng-submit="cc.saveContact()">
+            <form name="cc.form" ng-submit="cc.saveContact()">
                 <div class="form-group">
                     <label>სახელი:</label>
                     <div class="input-group">
@@ -74,7 +74,7 @@
                     <button type="submit" class="btn btn-primary">
                         <i class="fa fa-save"></i> შენახვა
                     </button>
-                    <button type="button" class="btn" ng-click="cc.clearVariables()">
+                    <button type="reset" class="btn" ng-click="cc.clearVariables()">
                         <i class="fa fa-eraser"></i> გასუფთავება
                     </button>
                 </div>

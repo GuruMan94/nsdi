@@ -6,11 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 @Controller
 @RequestMapping("/registration")
@@ -24,7 +26,7 @@ public class RegistrationController {
 
 	@GetMapping
 	public String registration(ModelMap model, HttpServletRequest request, HttpServletResponse response){
-		return "register.html";
+		return "registration.html";
 	}
 
 	@PostMapping
@@ -37,11 +39,10 @@ public class RegistrationController {
 		return "redirect:login.html";
 	}
 
-	@GetMapping("/dd")
-	@ResponseBody
-	public List<MyUser> all(){
-		return myUserService.findAll();
-	}
-
+//	@GetMapping("/all")
+//	@ResponseBody
+//	public List<MyUser> all(){
+//		return myUserService.findAll();
+//	}
 
 }

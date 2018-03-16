@@ -120,6 +120,7 @@
             cc.firstName = "";
             cc.lastName = "";
             cc.phoneNumber = "";
+			cc.form.$setPristine();
         }
     }
 })();
