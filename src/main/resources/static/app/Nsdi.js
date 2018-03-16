@@ -6,10 +6,10 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('/',{
-                url:'/',
-                templateUrl:'index.html'
-            })
+            // .state('/',{
+            //     url:'/',
+            //     templateUrl:'index.html'
+            // })
 
             .state('/logout', {
                 url: '/logout'

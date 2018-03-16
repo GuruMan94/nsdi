@@ -26,7 +26,7 @@ public class RegistrationController {
 
 	@GetMapping
 	public String registration(ModelMap model, HttpServletRequest request, HttpServletResponse response){
-		return "registration.html";
+		return "registration";
 	}
 
 	@PostMapping
