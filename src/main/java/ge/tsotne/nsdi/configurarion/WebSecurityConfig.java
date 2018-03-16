@@ -24,15 +24,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(myUserService).passwordEncoder(new BCryptPasswordEncoder());
 	}
 
-//	@Override
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//		User.withDefaultPasswordEncoder().username("user").password("user").roles("USER").build();
-//	}
-
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests()
-				.antMatchers("/login.html", "/registration", "/css/*").permitAll()
+				.antMatchers("/login.html", "/registration", "/css/*","/app/*").permitAll()
                 .anyRequest().authenticated()
 				.and()
 				.formLogin()

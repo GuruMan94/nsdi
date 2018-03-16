@@ -1,5 +1,6 @@
 package ge.tsotne.nsdi.service;
 
+import ge.tsotne.nsdi.Util;
 import ge.tsotne.nsdi.model.MyUser;
 import ge.tsotne.nsdi.model.User;
 import ge.tsotne.nsdi.repository.MyUserRepository;
@@ -10,6 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class MyUserService implements UserDetailsService {
@@ -32,5 +35,14 @@ public class MyUserService implements UserDetailsService {
 	public static User getUser(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		return (User) auth.getPrincipal();
+	}
+
+	public MyUser register(MyUser myUser) {
+		myUser.setPassword(Util.hashPassword(myUser.getPassword()));
+		return myUserRepository.save(myUser);
+	}
+
+	public List<MyUser> findAll() {
+		return myUserRepository.findAll();
 	}
 }

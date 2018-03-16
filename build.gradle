@@ -33,8 +33,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile("org.springframework.boot:spring-boot-devtools")
+    compile('org.apache.commons:commons-lang3:3.7')
     runtime('com.h2database:h2')
-    compileOnly "org.projectlombok:lombok:1.16.16"
+    compileOnly("org.projectlombok:lombok:1.16.16")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
+    testCompile('org.springframework.boot:spring-boot-starter-thymeleaf')
 }

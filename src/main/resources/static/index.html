@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
@@ -29,8 +29,7 @@
                 <button ui-sref="home" type="submit" class="btn navbar-btn btn-danger" name="logout" ng-click="cc.logout()">
                     <i class="fa fa-sign-out"></i>Log Out</button>
             </div>
-            <!--<p class="navbar-text navbar-right" th:text="'Signed in as ' + ${username}" style="margin-right: 10px;">-->
-                <!--Signed in as Anonymus</p>-->
+            <!--<p class="navbar-text navbar-right" th:text="'Signed in as ' + ${message}" style="margin-right: 10px;"></p>-->
 
         </div>
     </nav>
